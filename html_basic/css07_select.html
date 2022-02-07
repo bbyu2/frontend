@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html oncontextmenu="false">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/*
+	2n : 짝수번째 객체, 2n+1 : 홀수번째 객체, 3n : 3의 배수 번째 객체선택
+	구조선택자 : nth-child()	
+	*/
+
+	#lst>li:nth-child(2n) {
+		background:pink;
+	}
+	#lst>li:first-child {
+		color:orange;
+	}
+	#lst>li:last-child {
+		color:blue;
+		font-size: 1.2em;
+	}
+	#lst>li {
+		font-size: 1.2em;
+		margin-bottom: 30px;
+		border: 1px solid #bbb;
+	}
+	#lst>li {
+		/*          오른쪽  아래쪽  투명  색상*/
+		box-shadow: 10px 5px 5px red;
+	}
+
+</style>
+
+</head>
+
+<!-- 
+	html 속성
+	oncontextmenu : 마우스 오른쪽키 사용제어
+	onselectstart : 선택시작 불가능
+	ondragstart : 드래그 시작 불가능
+ -->
+
+
+
+<body>
+<ul id="lst">
+	<li>피카츄</li>
+	<li>라이츄</li>
+	<li>파이리</li>
+	<li>꼬북이</li>
+	<li>버터플</li>
+	<li>야도란</li>
+	<li>피존투</li>
+	<li>또가스</li>
+</ul>
+
+<style>
+	/*
+	구조선택자
+		:first-of-type : 처음객체
+		:last-of-type : 마지막 객체
+		:nth-of-type(2n) : 2n짝수번째, 2n+1홀수 번째
+	*/
+	#lst2>li:nth-of-type(2n){
+		background:yellow;
+	}
+	#lst2>li:nth-of-type(2n+1){
+		background:orange;
+	}
+	#lst2>li:first-of-type{
+		font-size:2em;
+	}
+	#lst2>li:last-of-type{
+		color: green;
+	}
+	
+</style>
+
+<ul id="lst2">
+	<li>피카츄</li>
+	<li>라이츄</li>
+	<li>파이리</li>
+	<li>꼬북이</li>
+	<li>버터플</li>
+	<li>야도란</li>
+	<li>피존투</li>
+	<li>또가스</li>
+</ul>
+
+<style>
+	/*
+		::first- letter -> 문단의 첫번째 문자에 스타일 적용
+	*/
+	#txt::first-letter {
+		font-size: 2em;
+		back-ground: pink;
+		font-weight: bold;
+		color: red;
+	}
+	
+	#txt::first-line {
+		text-decoration:underline;
+	}
+	#txt::selection {
+		color:red;
+		background: #000;
+	}
+	
+</style>
+
+
+<div id = "txt">
+쌍용자동차의 코란도 이모션 대박대박 쌍용자동차의 코란도 이모션 대박대박 쌍용자동차의 코란도 이모션 대박대박 쌍용자동차의 코란도 이모션 대박대박 쌍용자동차의 코란도 이모션 대박대박 쌍용자동차의 코란도
+이모션 대박대박 쌍용자동차의 코란도 이모션 대박대박 쌍용자동차의 코란도 이모션 대박대박 
+
+
+
+</body>
+
+</html>

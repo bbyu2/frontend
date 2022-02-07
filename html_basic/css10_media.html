@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width = device-width, initial-sale=1"/>
+<style>
+
+   body,ul,li{
+   		margin:0;
+   		padding:0;
+   		list-style-type:none;
+   }
+   img{
+   		width:50%;
+   		height:200px;
+   }
+   body{
+   		background-color: #ddd;
+   }
+   li{
+   		background-color: #fff;
+   		border: 1px solid gray;
+   		margin: 5px;
+   }
+   /*반응형 스타일 적용하기*/
+   
+   /* 320px ~ 600px */
+   /* all, screen, print, tv, projection.... */
+   @media all and (min-width:320px) and (max-width: 600px){
+   		li{background: yellow;}
+   		img{width: 100%;}
+   	}
+
+	/*601px ~ 900px */
+	@media all and (min-width:601px) and (max-width:900px) {
+		li{background: #000; color:#f00;}
+		img{width:30%}
+	}
+	/*901~*/
+	@media all and (min-width:901px) {
+		li{background: pink; color: green; font-weight: bold;}
+		img{width:20%;}
+	}
+	
+</style>
+
+</head>
+<body>
+<ul>
+	<li> 6개월 의무보호확약 해제의 부담에도 불구하고 카카오뱅크가 주가 방어에 성공하며 상승세를 이어갔다. 개장과 동시에 쏟아진 외국인들의 폭풍 매수 덕분이다.</li>
+	<li>7일 한국거래소에 따르면 카카오뱅크는 전 거래일 대비 250원(0.59%) 오른 4만2350원에 마감했다</li>
+	<li>카카오뱅크는 4거래일 연속 상승세가 이어지고 있다. 지난달 28일 3.4% 상승한데 이어 설 연휴 직후인 지난 3일과 4일에는 0.85%, </li>
+	<li>이날 카카오뱅크는 오버행 우려가 있던 말이었다. </li>
+	<li>또 상장 전부터 지분을 보유했던 앵커에쿼티파트너스(1064만주 보유)와 Keto홀딩스(1064만주 보유)의 보호예수도 해제됐고,</li>
+	<li>여기에 상장 당시 공모를 통해 기관투자자에게 배정됐던 1326만주도 보호예수도 풀렸다.</li>
+	<li>즉, 이날 보호예수가 풀린 물량만 총 3억3171만주로 카카오뱅크 전체 주식수(4억7516만주)의 약 70%에 달한다.</li>
+</ul>
+<img alt="img" src="../img/qr.png"/>
+<img alt="img" src="../img/01.png"/>
+
+</body>
+</html>

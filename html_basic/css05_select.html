@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* 
+	속성을 이용한 성택
+		$= : 특정값으로 끝나는 태그를 선택
+		^= : 특정값으로 시작하는 태그를 선택
+		*= : 특정값이 포함된 태그를 선택
+	*/
+	
+	
+	.c1{
+		background:yellow;
+	}
+	
+	img[title=photo] {
+		border: 2px solid red;
+	}
+	
+	form > input[name$=id] {
+		background-color: pink;
+	}
+	
+	form > input[name^=user] {
+		color : red;
+	}
+	
+	form > input[type *= t] {
+		background: lightblue;
+	}
+	
+	form > input[value *= hee] {
+		background : green;
+	}
+	
+	/* 반응선택자 : 아무스 오버시*/
+	ul > li:hover {
+		background-color: lightgray;
+	}
+	
+	img:hover {
+		border : 5px dotted blue;
+	}
+	
+	ul li:active {
+		border : 5px red solid;
+	}
+	
+	
+	
+</style>
+
+</head>
+<body>
+<form>
+	아이디 : <input type="text" name="userid"><br/>
+	비밀번호 : <input type="password" name="userpwd"><br/>
+	<input type="submit" value="login"/>
+</form>
+<ul>
+	<li>선택자1</li>
+	<li class="c1">선택자2</li>
+	<li>선택자3</li>
+	<li class="c1">선택자4</li>
+	<li>선택자5</li>
+	<li >선택자6</li>
+	<li class="c1">선택자7</li>
+</ul>
+<img alt="qr" src="../img/qr.png" title="photo" width="400px">
+<img alt="qr" src="../img/zz.jpg" title="photo" width="500px">
+
+
+</body>
+</html>

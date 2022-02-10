@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   #postMain{width:1000px; height: 164px; margin: 0 auto; }
+   #postMain>input {width:30px; height: 164px;}
+   #imageView{
+      width:940px; overflow: hidden; position: relative;
+   }
+   #imageList{width: 2320px; position: relative;}
+   #postMain>input, #postMain>div{
+      float:left;
+   }
+</style>
+<script>
+   function setImage() {
+      var imgTag=""
+      for(var i=1; i<20; i++){
+         if(i<10) 
+            imgTag += "<img src='m0"+i+".png'/>";
+         else
+            imgTag += "<img src='m"+i+".png'/>";
+      }
+      console.log(imgTag);
+      document.querySelector("#imageList").innerHTML = imgTag;
+   }
+   // 포스트 이동하기
+   var left = 0;
+   function movePoster() {
+      left = left - 5;
+      document.getElementById("imageList").style.left = left+"px";
+   }
+</script>
+</head>
+<body onload="setImage(); setInterval('movePoster()', 300)">
+<!-- postMain -->
+<div id="postMain">
+   <input type="button" value="◀"/>
+   <!-- 포스터 들어갈 곳 -->
+   <div id="imageView">
+      <div id="imageList"></div>
+   </div>
+
+   <input type="button" value="▶"/>
+</div>
+</body>
+</html>

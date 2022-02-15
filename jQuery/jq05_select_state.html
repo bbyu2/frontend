@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//상태선택자
+		
+		//속성값이 text인 객체를 선택하기
+		$(":text").css("width","300px").css("height","40px");
+		
+		//checked 속성에 대한 선택자 - checked속성이 설정되어 있을 떄 해제된다.
+		//$(":checked").attr("checked", false);
+		$(":checked").prop("checked", false);
+		
+		$(":selected").attr("selected", false);
+		
+		//---------------------
+		//컨텐츠 선택자
+		// contains() : 특정문자를 포함한 경우 선택한다.
+		$("p:contains('랜드로버')").css("background-color","pink");
+		
+		//has() : 특정태그를 포함한 경우 선택한다.
+		$("p:has('b')").css('border','2px solid red');
+		
+		// not() : 특정선택자를 제외한 나머지를 선택한다.
+		$("p:not(:first)").css("color","green");
+		
+	      //   closest()      : 조상선택자
+	      $("i").closest("body").css("border","3px dotted green");
+	      
+	      //   filter
+	      $("p").filter('.c1').css("color","#fff").css("background","#000");
+	      
+	      //   contents() : 특정선택자의 하위가 다른 태그가 포함된 경우 하위 태그를 선택한다.
+	      $("p").contents().css("color","red");
+	   });
+
+
+</script>
+</head>
+<body>
+<div>
+	<p>재규어 랜드로버는 좋다, 재규어 랜드로버는 좋다, <b>재규어 랜드로버</b>는 좋다, 재규어 랜드로버는 좋다, 재규어 랜드로버는 좋다, 재규어 랜드로버는 좋다, 재규어 랜드로버는 좋다,재규어 랜드로버는 좋다 ,재규어 랜드로버는 좋다</p>
+	<p class="c1">세계에서 가장 규모가 큰 카라반 전시회	 세계에서 가장 규모가 큰 카라반 전시회	세계에서 가장 규모가 큰 카라반 전시회	세계에서 가장 규모가 큰 카라반 전시회	세계에서 가장 규모가 큰 카라반 전시회	세계에서 가장 규모가 큰 카라반 전시회	세계에서 가장 규모가 큰 카라반 전시회	세계에서 가장 규모가 큰 카라반 전시회</p>
+	<p class="c2">재규어 랜드로버 코리아 대표는 랜드로버의 헤리티지를 계승하하는 <i>아이코닉</i>아이코닉 재규어 랜드로버 코리아 대표는 랜드로버의 헤리티지를 계승하하는 아이코닉아이코닉 재규어 랜드로버 코리아 대표는 랜드로버의 헤리티지를 계승하하는 아이코닉아이코닉 재규어 랜드로버 코리아 대표는 랜드로버의 헤리티지를 계승하하는 아이코닉아이코닉 재규어 랜드로버 코리아 대표는 랜드로버의 헤리티지를 계승하하는 아이코닉아이코닉 재규어 랜드로버 코리아 대표는 랜드로버의 헤리티지를 계승하하는 아이코닉아이코닉 재규어 랜드로버 코리아 대표는 랜드로버의 헤리티지를 계승하하는 아이코닉아이코닉</p>
+</div>
+<div>
+	<form action="">
+		<label>이름</label>
+		<input type="text" name="username" id="username"/><br/>
+		<label>연락처</label>
+		<input type="text" name="tel" id="tel"/><br/>
+		<label>사용자 동의 여부</label>
+		<input type="radio" name="accept" value="yes" checked>동의
+		<input type="radio" name="accept" value="no" checked>비동의<br/>
+		<label>자주가는 사이트</label>
+		<select name="site" id="site">
+			<option value="not">==직접선택==</option>
+			<option value="daum" selected>daum.net</option>
+			<option value="nate">nate.com</option>
+			<option value="naver">naver.com</option>
+		</select>
+	</form>
+</div>
+</body>
+</html>

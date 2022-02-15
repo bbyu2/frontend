@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style type="text/css">
+    ul, li{margin: 0; padding: 0; list-style-type: none;}
+    li{float: left; border: 1px solid gray;}
+    li, img{width: 100px; height: 100px;}
+</style>
+
+</style>
+<script>
+	$(function(){
+		//html() : 객체에 html태그를 추가하거나 객체를 가져올수 있다.
+		//선택자 객체에 태그를 추가
+		$("#obj").html("<a href ='http://www.daum.net'>다음</a>으로 이동하기");
+		//선택자 내의 태그를 얻어오는기능
+		var tag = $("#obj").html();
+		console.log(tag)
+		
+		//text() : 선택자 객체내의 내용을 문자로 추가하거나 얻어올 수 있다.
+		$("#obj2").text("<i>text를 객체에 추가하기</i>"); //i태그를 텍스트로 처리한다.
+		var tag2 = $("#obj2").text();
+		
+		console.log(tag2);
+		
+		$("body").html(""); //body태그의 내용이 모두 지워짐
+		
+		tag ="<ul><li id = 'i'><img src='../img/01.png'</li></ul>";
+		$("body").html(tag);
+		
+		//beofre() : 선택자이전에 객체 추가
+		$("#i").before("<li><img src='../img/02.png'></li>");
+		
+		//insertBefore() : 선택자이전에 객체추가
+		// 내용                     선택자
+		$("<li><img src ='../img/bt.png'></li>").insertBefore("#i");
+		
+		//after() :선텍자 다음에 객체 추가
+		$("#i").after("<li><img src='../img/zz.jpg'/></li>");
+		
+		//insertAfter() : 선택자 다음에 객체추가
+		$("<li id='p2'>Image</li>").insertAfter('#i');
+
+		// $("ul").html("<h1>텍스트</h1>")
+
+		//append() : 선택자의 마지막 내용으로 추가
+		$("ul").append("<li><img src='../img/jeju_map.jpg'/></li>");
+
+		//appendTo() : 선택자의 마지막에 내용으로 추가
+		$("<li><img src='../img/02.png'/></li>").appendTo("ul");
+
+		//prepend() : 선택자의 내용중 제일 앞에 추가
+		$('ul').prepend("<li><img src='../img/01.png'/></li>");
+
+		//prependTo() : 선택자의 내용중 제일 앞에 추가
+		$("<li><img src='../img/jeju_map.jpg'/></li>").prependTo("ul");
+
+		// clone() : 객체를 복사한다. -> 사용은 한번만 할 수 있다.
+		var copyLi = $("ul>li").eq(3).clone();
+		$("ul").append(copyLi);
+
+		//empty() : 선택자의 내용을 지우기
+		$("#p").empty();
+
+		//remove() : 선택자를 포함하여 지우기
+		$("#p2").remove();
+
+		// replayceAll() : 선택자의 객체를 치환
+		$("ReplayceAll").replaceAll("li:last");
+
+		//replayce() :
+		$("li:first").replaceWith("<li>replaceWith</li>");
+	});
+</script>
+</head>
+<body>
+<h1 id ="obj">객체조작 1</h1>
+<h1 id ="obj2">객체조작 2</h1>
+</body>
+</html>

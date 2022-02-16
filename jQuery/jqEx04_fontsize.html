@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){
+		//console.log(	$("div:last").css("font-size")	);
+		//	버튼의 이벤트 처리
+		$("button").on('click', function(){
+			//	버튼의 index를 구하여 0:점점 작게, 1:기본크기(16px), 2:점점 크게
+			var idx = $("button").index(this);
+			var size = parseFloat($("div:last").css("font-size"));	//	현재 글자 크기 16px
+			if(idx==0){	//	점점 작게
+				size--;	//	size -=0.5;
+			}else if(idx==1){	//	기본크기(16px)
+				size = 16;
+			}else if(idx==2){	//	점점 크게
+				size++;
+			}
+			$("div").last().css("font-size", size+"px");
+		});
+	});
+</script>
+
+</head>
+<body>
+
+<div>
+	<button>-</button>
+	<button>0</button>
+	<button>+</button>
+</div>
+<div>
+Front-end. 웹 프로그래밍의 한 분야. 반대말은 백엔드.
+프론트엔드 개발자는 프론트엔드, 백엔드의 완전한 분리 구조를 지향하는 업무 스타일의 개발 방식으로 프론트단의 비지니스 로직과 사용자 영역의 개발을 담당하는 사람이다. 
+이와 다른 방식의 업무 스타일 직군으로는 웹퍼블리셔(UI 개발)와 개발자(서버 개발자)의 업무 분리 방식이 있다. 이 경우는 주로 서버사이드가 클라이언트를 감싸는 방식이다. 
+MVC로 치면 View 부분에 해당하는 영역을 맡는다.
+출처 : 네이버 나무위키(https://namu.wiki/w/%ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%94%EB%93%9C);
+</div>
+
+
+
+</body>
+</html>

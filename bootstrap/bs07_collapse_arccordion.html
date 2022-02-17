@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <meta name="viewport" content="width=device-width, initial-sale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body></body>
+<div class="container">
+    <h1>Accordion 예</h1>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" data-target="#v1" data-toggle="collapse">기본으로 보이는내용: 포르쉐</div>
+            <div id="v1" class="collapse show" data-parent="#accordion"> 토글로보이는 내용 : 포르쉐는 좋아요 포르쉐는 좋아요 포르쉐는 좋아요 포르쉐는 좋아요 포르쉐는 좋아요 포르쉐는 좋아요 포르쉐는 좋아요 포르쉐는 좋아요 포르쉐는 좋아요</div>
+        </div>
+        <div cclass="card">
+            <div class="card-header" data-target="#v2" data-toggle="collapse">볼보자동차코리아</div>
+            <div id="v2"  class="collapse" data-parent="#accordion">볼보자동차코리아대표가 새로운 전기화 시대를 상징하는 차를 내놓음 볼보자동차코리아대표가 새로운 전기화 시대를 상징하는 차를 내놓음 볼보자동차코리아대표가 새로운 전기화 시대를 상징하는 차를 내놓음 볼보자동차코리아대표가 새로운 전기화 시대를 상징하는 차를 내놓음</div>
+        </div>
+        <div cclass="card">
+            <div class="card-header" data-target="#v3" data-toggle="collapse">람보르기니</div>
+            <div id="v3"  class="collapse" data-parent="#accordion"><img src="../img/zz.jpg" alt=""></div>
+        </div>
+    </div>
+
+
+    <h1>Collapse예</h1>
+    <input type="button" value="클릭하세요" class="btn btn-secondary" data-target="#view" data-toggle="collapse" />
+    <div id="view" class="collapse show">
+        <img src="../img/01.png" />
+    </div>
+
+    <hr>
+    <input type="button" value="클릭하세요" class="btn btn-secondary" data-target="#view1" data-toggle="collapse" />
+    <div id="view1" class="collapse show">
+        포르쉐 타고싶당 포르쉐 타고싶당 포르쉐 타고싶당 포르쉐 타고싶당 포르쉐 타고싶당 포르쉐 타고싶당
+    </div>
+</div>
+</body>
+
+</html>

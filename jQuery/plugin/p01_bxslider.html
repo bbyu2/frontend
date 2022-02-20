@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--  
+    https://github.com/stevenwanderski/bxslider-4 에서 다운로드
+
+    1. jquery
+    2. easing
+    3. bxslider 스크립트
+    4. bxslider 스타일시트
+    5. image폴더 복사
+-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="vendor/jquery.easing.1.3.js"></script>
+<script src="js/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css">
+<style>
+    #slider img{
+        width: 100%;
+        height: 400px;
+    }
+</style>
+<script>
+    $(function(){
+        $("#slider").bxSlider({
+            mode : 'horizontal' //기본 -> 'horizntal', 'vertical', 'fade'
+            ,sliderWidth: 800
+            ,sliderHeight: 450
+            ,speed: 5000
+            ,auto: true
+            ,randomStart: true //시작 슬라이드 변환
+            ,captions: true //title속성에 있는 설명을 표시한다
+            // ,hideControlOnEnd: true
+
+            //easing
+            ,useCSS: false //easing을 true(사용못함), false(사용)
+            ,easing: 'easeOutElastic'
+            ,onSliderLoad: function(){ //슬라이드 로딩완료되면 호
+                // alert("이미지 로딩 완료..");
+            }
+            ,onSildeAfter: function(){
+                console.log("onSliderAfter함수 실행됨...")
+            }
+        });
+        
+    
+    });
+</script>
+</head>
+<body>
+    <ul id="slider">
+        <li><a href="http://nate.com"><img src="../../img/01.png" alt="1" title="네이트홈페이지"></a></li>
+        <li><a href="http://naver.com"><img src="../../img/02.png" alt="2" title="naver~~"></a></li>
+        <li><a href="http://daum.net"><img src="../../img/bt.png" alt="3" title="다음홈페이지~~"></a></li>
+        <li><a href="http://google.com"><img src="../../img/zz.jpg" alt="4" title="구우그을"></a></li>
+        <li><a href="../jqEx06_listCheck.html"><img src="../../img/jeju_map.jpg" alt="5" title="목록........"></a></li>
+        <li><a href="http://nate.com"><img src="../../img/schedule.jpg" alt="6" title="목록....."></a></li>
+    </ul>
+</body>
+
+</html>

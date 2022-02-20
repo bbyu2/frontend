@@ -1,81 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
 <script>
-   function popupOpen(){
-      //   window.open() : »õ Ã¢À» »ı¼ºÇÏ¿© º¸¿©ÁÖ±â
-      //   1. »õ Ã¢¿¡ Ç¥½ÃµÉ ÆÄÀÏ¸í
-      //   2. À©µµ¿ì ÀÌ¸§
-      //   3. ¿É¼Ç (width, height,left, top, ...), resizeable:Ã¢Å©±â ¼³Á¤(Å©·ÒÀû¿ë¾È‰Î)
-      win = window.open("popup.html","w","width=400, height=400, left=300, top=200; resizeable=no");
-      
-      
-      //   ÆË¾÷Ã¢ °¡¿îµ¥·Î ¶ç¿ì±â
-      var x = screen.width/2 - win.outerWidth/2;
-      var y = screen.height/2 - win.outerHeight/2;
-      
-      win.moveTo(x,y);
-   }
-   function popupClose(){
-      win.close();
-      window.close();//   ÇöÀç Ã¢ ´İ±â
-      //self.close(); µµ °¡´É
-   }
-   function popupMove(){
-      //   À©µµ¿ì ÀÌµ¿
-      //   1. Àı´ë ÁÂÇ¥·Î ÀÌµ¿
-      //         x(left),y(top)
-      //win.moveTo(100, -100);
-      //   2. »ó´ë ÁÂÇ¥·Î ÀÌµ¿
-      win.moveBy(10,10);
-   
-   }
-   function popupResize(){
-      //   À©µµ¿ì Å©±â Á¶Àı
-      //   1.Àı´ëÅ©±â
-      //win.resizeTo(200,200);
-      //   2.»ó´ëÅ©±â  (w,h)
-      win.resizeBy(10,10);
-   
-   }
-   function winInfor(){
-      var txt ="";
-      //   À©µµ¿ì °´Ã¼ÀÇ Á¤º¸±¸ÇÏ±â
-      //   ÁÂÇ¥ ±¸ÇÏ±â : left,  top
-      txt += "window.screenX->" + window.screenX + "<br/>";
-      txt += "window.screenY->" + window.screenY + "<br/>";
-      
-      //   À©µµ¿ì Æø°ú ³ôÀÌ ±¸ÇÏ±â
-      //   Á¦¸ñ°ú Åø¹Ù¿Í Å×µÎ¸® µîÀ» Æ÷ÇÔÇÏ¿© ÀüÃ¼ Æø°ú ³ôÀÌ
-      txt += "window.outerWidth->" + window.outerWidth+"<br/>";
-      txt += "window.outerHeight->" + window.outerHeight+"<br/>";
-      
-      //   Á¦¸ñ°ú Åø¹Ù¿Í Å×µÎ¸® µîÀ» »« Æø°ú ³ôÀÌ
-      txt += "window.innerWidth->" + window.innerWidth+"<br/>";
-      txt += "window.innerHeight->" + window.innerHeight+"<br/>";
-      
-      txt += "<h2>screen°´Ã¼</h2>";
-      
-      //   ÀÛ¾÷ Ç¥½ÃÁÙÀ» Æ÷ÇÔÇÑ Æø°ú ³ôÀÌ
-      txt += "screen.width->" + screen.width+"<br/>";
-      txt += "screen.height->" + screen.height+"<br/>";
-      
-      //   ÀÛ¾÷ Ç¥½ÃÁÙÀ» Á¦¿ÜÇÑ Æø°ú ³ôÀÌ
-      txt += "screen.availWidth->" + screen.availWidth+"<br/>";
-      txt += "screen.availHeight->" + screen.availHeight+"<br/>";
-      
-      document.getElementById("winView").innerHTML = txt;
-   }
+	function popupOpen(){
+		//	window.open() : ìƒˆ ì°½ì„ ìƒì„±í•˜ì—¬ ë³´ì—¬ì£¼ê¸°
+		//	1. ìƒˆ ì°½ì— í‘œì‹œë  íŒŒì¼ëª…
+		//	2. ìœˆë„ìš° ì´ë¦„
+		//	3. ì˜µì…˜ (width, height,left, top, ...), resizeable:ì°½í¬ê¸° ì„¤ì •(í¬ë¡¬ì ìš©ì•ˆëŒ)
+		win = window.open("popup.html","w","width=400, height=400, left=300, top=200; resizeable=no");
+		
+		
+		//	íŒì—…ì°½ ê°€ìš´ë°ë¡œ ë„ìš°ê¸°
+		var x = screen.width/2 - win.outerWidth/2;
+		var y = screen.height/2 - win.outerHeight/2;
+		
+		win.moveTo(x,y);
+	}
+	function popupClose(){
+		win.close();
+		window.close();//	í˜„ì¬ ì°½ ë‹«ê¸°
+		//self.close(); ë„ ê°€ëŠ¥
+	}
+	function popupMove(){
+		//	ìœˆë„ìš° ì´ë™
+		//	1. ì ˆëŒ€ ì¢Œí‘œë¡œ ì´ë™
+		//		   x(left),y(top)
+		//win.moveTo(100, -100);
+		//	2. ìƒëŒ€ ì¢Œí‘œë¡œ ì´ë™
+		win.moveBy(10,10);
+	
+	}
+	function popupResize(){
+		//	ìœˆë„ìš° í¬ê¸° ì¡°ì ˆ
+		//	1.ì ˆëŒ€í¬ê¸°
+		//win.resizeTo(200,200);
+		//	2.ìƒëŒ€í¬ê¸°  (w,h)
+		win.resizeBy(10,10);
+	
+	}
+	function winInfor(){
+		var txt ="";
+		//	ìœˆë„ìš° ê°ì²´ì˜ ì •ë³´êµ¬í•˜ê¸°
+		//	ì¢Œí‘œ êµ¬í•˜ê¸° : left,  top
+		txt += "window.screenX->" + window.screenX + "<br/>";
+		txt += "window.screenY->" + window.screenY + "<br/>";
+		
+		//	ìœˆë„ìš° í­ê³¼ ë†’ì´ êµ¬í•˜ê¸°
+		//	ì œëª©ê³¼ íˆ´ë°”ì™€ í…Œë‘ë¦¬ ë“±ì„ í¬í•¨í•˜ì—¬ ì „ì²´ í­ê³¼ ë†’ì´
+		txt += "window.outerWidth->" + window.outerWidth+"<br/>";
+		txt += "window.outerHeight->" + window.outerHeight+"<br/>";
+		
+		//	ì œëª©ê³¼ íˆ´ë°”ì™€ í…Œë‘ë¦¬ ë“±ì„ ëº€ í­ê³¼ ë†’ì´
+		txt += "window.innerWidth->" + window.innerWidth+"<br/>";
+		txt += "window.innerHeight->" + window.innerHeight+"<br/>";
+		
+		txt += "<h2>screenê°ì²´</h2>";
+		
+		//	ì‘ì—… í‘œì‹œì¤„ì„ í¬í•¨í•œ í­ê³¼ ë†’ì´
+		txt += "screen.width->" + screen.width+"<br/>";
+		txt += "screen.height->" + screen.height+"<br/>";
+		
+		//	ì‘ì—… í‘œì‹œì¤„ì„ ì œì™¸í•œ í­ê³¼ ë†’ì´
+		txt += "screen.availWidth->" + screen.availWidth+"<br/>";
+		txt += "screen.availHeight->" + screen.availHeight+"<br/>";
+		
+		document.getElementById("winView").innerHTML = txt;
+	}
 </script>
 
 <style>
-   body{margin:0px;}
+	body{margin:0px;}
 </style>
 
 </head>
 <body onload="winInfor()">
-<button onclick="popupOpen()">ÆË¾÷Ã¢ ¶ç¿ì±â</button>
-<button onclick="popupClose()">ÆË¾÷Ã¢ ´İ±â</button>
-<button onclick="popupMove()">ÆË¾÷Ã¢ ÀÌµ¿</button>
-<button onclick="popupResize()">ÆË¾÷Ã¢ Å©±â Á¶Àı</button>
-<button onclick="winInfor()">À©µµ¿ì °´Ã¼ Á¤º¸</button>
+<button onclick="popupOpen()">íŒì—…ì°½ ë„ìš°ê¸°</button>
+<button onclick="popupClose()">íŒì—…ì°½ ë‹«ê¸°</button>
+<button onclick="popupMove()">íŒì—…ì°½ ì´ë™</button>
+<button onclick="popupResize()">íŒì—…ì°½ í¬ê¸° ì¡°ì ˆ</button>
+<button onclick="winInfor()">ìœˆë„ìš° ê°ì²´ ì •ë³´</button>
 <div id="winView"></div>
 
 </body>

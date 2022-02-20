@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jquery 정규표현식</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#hide").click(function () {
+                // 사라지는 시간 : "slow","fast","normal",밀리초
+                $("#i").hide("fast"); //폭, 높이, 점점흐리게
+            });
+            $("#show").click(function(){
+                $("#i").show("slow")
+            });
+            $("#toggle").click(function(){
+                $("#i").toggle(3000);
+            })
+
+            // fadeIn() : 점점진하게
+            // fadeOut() : 점점흐리게
+            // fadeToggle()
+            $("#fadeIn").click(function(){
+                $("#i").fadeIn(3000);
+            });
+            $("#fadeOut").click(function(){
+                $("#i").fadeOut(3000);
+            });
+            $("#fadeToggle").click(function(){
+                $("#i").fadeToggle(3000);
+            });
+
+            // slideUp() : 슬라이드 모양으로 줄어듬
+            // slideDown() 
+            // slideToggle()
+            $("#slideUp").click(function(){
+                $("#i").slideUp(3000);
+            });
+            $("#slideDown").click(function(){
+                $("#i").slideDown(3000);
+            });
+            $("#slideToggle").click(function(){
+                $("#i").slideToggle(3000);
+            });
+
+
+
+        })
+    </script>
+
+<body>
+    <div>
+        <button id="hide">숨기기(hidden)</button>
+        <button id="show">보여주기(show)</button>
+        <button id="toggle">toggle(hidden,show)</button>
+        <button id="fadeIn">숨기기(fadeIn)</button>
+        <button id="fadeOut">보여주기(fadeOut)</button>
+        <button id="fadeToggle">toggle(fadeIn,fadeOut)</button>
+        <button id="slideUp">숨기기(slideUp)</button>
+        <button id="slideDown">보여주기(slideDown)</button>
+        <button id="slideToggle">toggle(slideUp,slideDown)</button>
+        <hr />
+        <img src="../img/01.png" id="i" /><br />
+        <img src="../img/02.png" /><br />
+    </div>
+</body>
+</head>
+
+</html>
